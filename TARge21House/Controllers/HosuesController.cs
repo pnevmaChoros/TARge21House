@@ -16,6 +16,7 @@ namespace TARge21House.Controllers
             _context = context;
         }
 
+
         public IActionResult Index()
 		{
 			var result = _context.Houses
@@ -36,5 +37,6 @@ namespace TARge21House.Controllers
 
 			return View(result);
 		}
+
 	}
 }
