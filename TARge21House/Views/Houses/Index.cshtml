@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TARge21House.Models.House.HouseIndexViewModel>
+
+@{
+	int rowNumber = 1;
+}
+
+<div class="h1">
+	Houses
+</div>
+
+
+<form method="post">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nr</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">Area</th>
+                <th scope="col">Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var spaceship in Model)
+                {
+                    <tr>
+                        <td>@rowNumber</td>
+                        <td>@spaceship.Address</td>
+                        <td>@spaceship.City</td>
+                        <td>@spaceship.Area</td>
+                        <td>@spaceship.Price</td>
+                        <td>@spaceship.Id</td>
+                    </tr>
+
+                    rowNumber += 1;
+                }
+            }
+        </tbody>
+
+
+    </table>
+</form>

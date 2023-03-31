@@ -4,11 +4,11 @@ using TARge21House.Models.House;
 
 namespace TARge21House.Controllers
 {
-	public class HosueController : Controller
+	public class HosuesController : Controller
 	{
 		private readonly TARge21HouseContext _context;
 
-        public HosueController
+        public HosuesController
 			(
 				TARge21HouseContext context
 			)
