@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TARge21House.Core\TARge21House.Core.csproj" />
+  </ItemGroup>
+
 </Project>
