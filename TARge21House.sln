@@ -5,11 +5,11 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House", "TARge21House\TARge21House.csproj", "{1B774083-D10F-4292-ACB1-BA895CCC2740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.ApplicationServices", "TARge21House.ApplicationServices\TARge21House.ApplicationServices.csproj", "{9FF4092C-7AAC-4A67-9C1E-F43865442C07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House.ApplicationServices", "TARge21House.ApplicationServices\TARge21House.ApplicationServices.csproj", "{9FF4092C-7AAC-4A67-9C1E-F43865442C07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.Core", "TARge21House.Core\TARge21House.Core.csproj", "{89AB6BDD-A68C-40C7-B9EA-C582DBB37639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House.Core", "TARge21House.Core\TARge21House.Core.csproj", "{89AB6BDD-A68C-40C7-B9EA-C582DBB37639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.Data", "TARge21House.Data\TARge21House.Data.csproj", "{409E0510-71D3-4B04-B6A6-E3A0FCE7C184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House.Data", "TARge21House.Data\TARge21House.Data.csproj", "{409E0510-71D3-4B04-B6A6-E3A0FCE7C184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
