@@ -37,7 +37,14 @@
 			</div>
 		</div>
 		
-		<input asp-action="Create" asp-controller="houses" type="submit" class=" btn btn-primary " value="Add" />
+		@if (Model.Id.HasValue)
+		{
+			<input asp-action="Update" asp-controller="houses" type="submit" class=" btn btn-primary " value="Update" />
+		}
+		else
+		{
+			<input asp-action="Create" asp-controller="houses" type="submit" class=" btn btn-primary " value="Add" />
+		}
 
 		<a asp-action="index" class="btn btn-success">Back</a>
 

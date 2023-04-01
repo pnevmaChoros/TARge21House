@@ -57,5 +57,28 @@ namespace TARge21House.ApplicationServices.Services
 
             return houseId;
         }
+
+
+        public async Task<House> Update(HouseDto dto)
+        {
+            House house = new();
+
+            house.Id = dto.Id;
+            house.Address = dto.Address;
+            house.City = dto.City;
+
+            house.Floors = dto.Floors;
+            house.Area = dto.Area;
+            house.Price = dto.Price;
+
+            house.CreatedAt = dto.CreatedAt;
+            house.ModifiedAt = dto.ModifiedAt;
+
+
+            _context.Houses.Update(house);
+            await _context.SaveChangesAsync();
+
+            return house;
+        }
     }
 }

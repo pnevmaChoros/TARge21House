@@ -10,5 +10,7 @@ namespace TARge21House.Core.ServiceInterface
 		Task<House> GetAsync(Guid id);
 
 		Task<House> Delete(Guid id);
+
+		Task<House> Update(HouseDto dto);
 	}
 }
