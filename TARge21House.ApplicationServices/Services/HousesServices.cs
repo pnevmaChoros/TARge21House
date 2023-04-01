@@ -1,4 +1,5 @@
-﻿using TARge21House.Core.Domain.House;
+﻿using Microsoft.EntityFrameworkCore;
+using TARge21House.Core.Domain.House;
 using TARge21House.Core.Dto;
 using TARge21House.Core.ServiceInterface;
 using TARge21House.Data;
@@ -16,7 +17,7 @@ namespace TARge21House.ApplicationServices.Services
         }
 
 
-        public async Task<House> Add(HouseDto dto)
+        public async Task<House> Create(HouseDto dto)
         {
             var domain = new House()
             {
@@ -34,6 +35,15 @@ namespace TARge21House.ApplicationServices.Services
             await _context.SaveChangesAsync();
 
             return domain;
+        }
+
+
+        public async Task<House> GetAsync(Guid id)
+        {
+            var result = await _context.Houses
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return result;
         }
     }
 }

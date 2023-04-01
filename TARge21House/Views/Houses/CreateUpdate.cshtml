@@ -1,4 +1,4 @@
-﻿@model TARge21House.Models.House.HouseEditViewModel
+﻿@model TARge21House.Models.House.HouseCreateUpdateViewModel
 
 <h1>Add</h1>
 
@@ -37,7 +37,9 @@
 			</div>
 		</div>
 		
-		<input asp-action="add" asp-controller="spaceships" type="submit" class=" btn btn-primary " value="Add" />
+		<input asp-action="Create" asp-controller="houses" type="submit" class=" btn btn-primary " value="Add" />
+
+		<a asp-action="index" class="btn btn-success">Back</a>
 
 	</form>
 </div>

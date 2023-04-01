@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using TARge21House.ApplicationServices.Services;
+using TARge21House.Core.ServiceInterface;
 using TARge21House.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<TARge21HouseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IHousesServices, HousesServices>();
 
 var app = builder.Build();
 

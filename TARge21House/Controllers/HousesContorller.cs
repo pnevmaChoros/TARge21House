@@ -6,23 +6,24 @@ using TARge21House.Models.House;
 
 namespace TARge21House.Controllers
 {
-	public class HosuesController : Controller
+	public class HousesController : Controller
 	{
 		private readonly TARge21HouseContext _context;
 		private readonly IHousesServices _housesServices;
 
-        public HosuesController
+		public HousesController
 			(
 				TARge21HouseContext context,
 				IHousesServices housesServices
 			)
-        {
-            _context = context;
+		{
+			_context = context;
 			_housesServices = housesServices;
-        }
+		}
 
 
-        public IActionResult Index()
+		[HttpGet]
+		public async  Task<IActionResult> Index()
 		{
 			var result = _context.Houses
 				.OrderByDescending(h => h.CreatedAt)
@@ -45,16 +46,16 @@ namespace TARge21House.Controllers
 
 
 		[HttpGet]
-		public IActionResult Add()
+		public IActionResult Create()
 		{
-			HouseEditViewModel house = new HouseEditViewModel();
+			HouseCreateUpdateViewModel house = new HouseCreateUpdateViewModel();
 
-			return View("Edit", house);
+			return View("CreateUpdate", house);
 		}
 
 
 		[HttpPost]
-		public async Task<IActionResult> Add(HouseEditViewModel vm)
+		public async Task<IActionResult> Create(HouseCreateUpdateViewModel vm)
 		{
 			var dto = new HouseDto()
 			{
@@ -68,9 +69,9 @@ namespace TARge21House.Controllers
 				ModifiedAt = vm.ModifiedAt
 			};
 
-			var result = await _housesServices.Add(dto);
+			var result = await _housesServices.Create(dto);
 
-			if(result == null)
+			if (result == null)
 			{
 				return RedirectToAction(nameof(Index));
 			}

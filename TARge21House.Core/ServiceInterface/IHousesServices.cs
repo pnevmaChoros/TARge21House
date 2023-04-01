@@ -5,6 +5,8 @@ namespace TARge21House.Core.ServiceInterface
 {
 	public interface IHousesServices
 	{
-		Task<House> Add(HouseDto dto);
+		Task<House> Create(HouseDto dto);
+
+		Task<House> GetAsync(Guid id);
 	}
 }

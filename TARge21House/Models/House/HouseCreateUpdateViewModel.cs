@@ -1,6 +1,6 @@
 ﻿namespace TARge21House.Models.House
 {
-    public class HouseEditViewModel
+    public class HouseCreateUpdateViewModel
     {
         public Guid? Id { get; set; }
 
