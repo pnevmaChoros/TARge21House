@@ -45,5 +45,17 @@ namespace TARge21House.ApplicationServices.Services
 
             return result;
         }
+
+
+        public async Task<House> Delete(Guid id)
+        {
+            var houseId = await _context.Houses
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            _context.Houses.Remove(houseId);
+            await _context.SaveChangesAsync();
+
+            return houseId;
+        }
     }
 }
