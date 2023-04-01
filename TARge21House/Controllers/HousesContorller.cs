@@ -79,5 +79,34 @@ namespace TARge21House.Controllers
 			return RedirectToAction(nameof(Index), vm);
 		}
 
+
+		[HttpGet]
+		public async Task<IActionResult> Details(Guid id)
+		{
+			var house = await _housesServices.GetAsync(id);
+
+			if (house == null)
+			{
+				return NotFound();
+			}
+
+
+			var vm = new HouseDetailsViewModel();
+
+			vm.Id = id;
+
+			vm.Address = house.Address;
+			vm.City = house.City;
+			
+			vm.Floors = house.Floors;
+			vm.Area = house.Area;
+			vm.Price = house.Price;
+			
+			vm.CreatedAt = house.CreatedAt;
+			vm.ModifiedAt = house.ModifiedAt;
+
+			return View(vm);
+		}
+
 	}
 }

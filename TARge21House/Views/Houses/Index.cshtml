@@ -21,21 +21,26 @@
                 <th scope="col">City</th>
                 <th scope="col">Area</th>
                 <th scope="col">Price</th>
-                <th></th>
+                @*<th></th>*@
             </tr>
         </thead>
         <tbody>
             @if (Model != null)
             {
-                foreach (var spaceship in Model)
+                foreach (var house in Model)
                 {
                     <tr>
                         <td>@rowNumber</td>
-                        <td>@spaceship.Address</td>
-                        <td>@spaceship.City</td>
-                        <td>@spaceship.Area</td>
-                        <td>@spaceship.Price</td>
-                        <td>@spaceship.Id</td>
+                        <td>@house.Address</td>
+                        <td>@house.City</td>
+                        <td>@house.Area</td>
+                        <td>@house.Price</td>
+                        @*<td>@house.Id</td>*@
+
+                        <td>
+                            <a asp-action="details" asp-controller="houses" asp-route-id="@house.Id" class="btn btn-info">Details</a>
+                        </td>
+
                     </tr>
 
                     rowNumber += 1;
